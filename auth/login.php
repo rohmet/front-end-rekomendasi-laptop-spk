@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In - SPK Laptop</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="auth-body">
@@ -16,16 +18,12 @@
             <h1 class="auth-title">Welcome Back.</h1>
             <p class="auth-subtitle">Please enter your details to access your personalized collection.</p>
             
-            <?php if (!empty($error_message)): ?>
-                <div class="editorial-alert">
-                    <?= $error_message; ?>
-                </div>
-            <?php endif; ?>
+            <div id="alert-box" class="editorial-alert" style="display: none; background-color: #f8d7da; color: #721c24;"></div>
 
-            <form action="" method="POST">
+            <form onsubmit="handleLogin(event)">
                 <div class="form-group">
                     <label class="form-label" for="username">Username</label>
-                    <input type="text" name="username" id="username" class="editorial-input" placeholder="Enter your username" required autofocus>
+                    <input type="text" name="username" id="username" class="editorial-input" placeholder="Try 'admin' or 'user'" required autofocus>
                 </div>
 
                 <div class="form-group">
@@ -44,12 +42,33 @@
             </form>
             
             <div class="auth-footer">
-                Don't have an account? <a href="index.php?controller=auth&action=register">Subscribe Now</a>
+                Don't have an account? <a href="register.php">Buat akun</a>
                 <br><br>
-                <a href="index.php" style="color: #bbb; font-size: 0.8rem;">&larr; Back to Home</a>
+                <a href="../index.php" style="color: #bbb; font-size: 0.8rem;">&larr; Kembali ke Beranda</a>
             </div>
         </div>
     </div>
 
+    <script>
+        function handleLogin(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value.toLowerCase();
+            const alertBox = document.getElementById('alert-box');
+
+            const btn = document.querySelector('button[type="submit"]');
+            const originalText = btn.innerText;
+            btn.innerText = "Checking...";
+            btn.disabled = true;
+
+            setTimeout(() => {
+                if (username === 'admin') {
+                    window.location.href = '../admin/dashboard.php';
+                } else {
+                    window.location.href = '../user/recommendation.php';
+                }
+            }, 1000);
+        }
+    </script>
 </body>
 </html>

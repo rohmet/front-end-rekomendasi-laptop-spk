@@ -1,6 +1,6 @@
-<?php require 'views/templates/header.php'; ?>
+<?php require '../templates/header.php'; ?>
 
-<div class="editorial-overlay" id="modal-overlay">
+<div class="editorial-overlay" id="modal-overlay" style="display:flex; justify-content:center; align-items:center; min-height:80vh;">
     
     <div class="editorial-modal">
         <div class="modal-meta">
@@ -11,7 +11,7 @@
         <h2 class="modal-title">New Entry.</h2>
         <p class="modal-subtitle">Add a new machine to the database. Please ensure all specifications are accurate.</p>
 
-        <form action="index.php?controller=admin&action=store" method="POST">
+        <form onsubmit="handleCreate(event)">
             
             <div class="form-group">
                 <label class="form-label" for="brand">Brand / Manufacturer</label>
@@ -50,7 +50,7 @@
                     Save Configuration
                 </button>
                 
-                <a href="index.php?controller=admin&action=dashboard" class="btn-text-cancel">
+                <a href="dashboard.php" class="btn-text-cancel">
                     Cancel & Return to Dashboard
                 </a>
             </div>
@@ -58,4 +58,17 @@
     </div>
 </div>
 
-<?php require 'views/templates/footer.php'; ?>
+<script>
+    function handleCreate(e) {
+        e.preventDefault();
+        const btn = document.querySelector('.btn-editorial');
+        btn.innerText = "Saving...";
+        
+        setTimeout(() => {
+            alert("Data Laptop Baru Berhasil Disimpan! (Simulasi)");
+            window.location.href = 'dashboard.php';
+        }, 1000);
+    }
+</script>
+
+<?php require '../templates/footer.php'; ?>
