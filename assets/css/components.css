@@ -1,0 +1,372 @@
+/* --- BUTTONS --- */
+.btn-brutal {
+  background: #000;
+  color: #fff;
+  border: 1px solid #000;
+  padding: 15px 30px;
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-block;
+}
+.btn-brutal:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* --- CONTROL PANEL (FILTER BOX) --- */
+.control-panel {
+  border: var(--brutal-border);
+  background: #fff;
+  margin-bottom: 60px;
+}
+
+.panel-header {
+  background: #000;
+  color: #fff;
+  padding: 10px 20px;
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-body {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* --- INPUT RANGE CUSTOM --- */
+.brutal-range input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 2px;
+  background: #000;
+  margin-top: 15px;
+}
+.brutal-range input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #000;
+  border: 1px solid #000;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+/* --- WINDOW CARD (LAPTOP ITEM) --- */
+.window-card {
+  background: #fff;
+  border-right: var(--brutal-border);
+  border-bottom: var(--brutal-border);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.3s;
+}
+.window-card:hover {
+  background: #fffef0;
+}
+
+.window-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  color: #666;
+}
+
+.window-dots {
+  display: flex;
+  gap: 4px;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+
+.window-visual {
+  aspect-ratio: 4/3;
+  background: #eee;
+  border: var(--brutal-border);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.meta-tag {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+  color: #555;
+}
+
+.card-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.highlight-text {
+  background: #000;
+  color: #fff;
+  padding: 2px 6px;
+  display: inline;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.specs-list {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* =========================================
+   ADDITION: EDITORIAL TABLES & FOOTER
+   ========================================= */
+
+/* --- EDITORIAL TABLE (Untuk Dashboard) --- */
+.editorial-table-container {
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid #eee;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+}
+
+.editorial-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  text-align: left;
+}
+
+.editorial-table thead th {
+  background-color: #fafafa;
+  color: #111;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.75rem;
+  padding: 20px;
+  border-bottom: 2px solid #000; /* Garis tegas di header */
+}
+
+.editorial-table tbody td {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+  color: #444;
+  font-size: 0.9rem;
+}
+
+.editorial-table tbody tr:hover {
+  background-color: #ffffef; /* Highlight kuning tipis ala kertas saat hover */
+}
+
+/* Primary Data (Judul Laptop) */
+.table-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: #000;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+}
+.table-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: uppercase;
+}
+
+/* Price Tag di Tabel */
+.table-price {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: #000;
+}
+
+/* Action Buttons Kecil */
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ddd;
+  color: #555;
+  transition: all 0.2s;
+  margin-right: 5px;
+}
+.btn-icon:hover {
+  border-color: #000;
+  background: #000;
+  color: #fff;
+}
+.btn-icon.delete:hover {
+  border-color: #d00;
+  background: #d00;
+  color: #fff;
+}
+
+/* --- MINIMALIST FOOTER --- */
+.editorial-footer {
+  border-top: 1px solid #e0e0e0;
+  padding: 40px 20px;
+  text-align: center;
+  background: #fff;
+  margin-top: auto; /* Push ke bawah jika konten sedikit */
+}
+
+.footer-brand {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.footer-copy {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- BUTTON REMOVE (Di Halaman Favorit) --- */
+.btn-remove-card {
+  text-align: center;
+  color: #d00; /* Warna merah */
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 1px solid #eee;
+  padding: 10px;
+  display: block;
+  width: 100%;
+  margin-top: 15px;
+  transition: all 0.2s;
+  background: transparent;
+  text-decoration: none;
+  font-family: var(--font-sans);
+}
+
+.btn-remove-card:hover {
+  background: #fff0f0; /* Merah muda sangat tipis saat hover */
+  border-color: #d00;
+  color: #a00;
+}
+
+/* =========================================
+   EDITORIAL MODAL (FORM POPUP)
+   ========================================= */
+
+.editorial-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95); /* Putih bersih transparan */
+  backdrop-filter: blur(4px); /* Efek blur estetik */
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
+
+.editorial-modal {
+  background: #fff;
+  width: 90%;
+  max-width: 600px; /* Lebar ideal untuk form */
+  border: 1px solid #000; /* Garis hitam tegas */
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.05); /* Shadow kotak tipis */
+  padding: 40px;
+  position: relative;
+  max-height: 90vh; /* Agar bisa discroll jika layar pendek */
+  overflow-y: auto;
+}
+
+/* Header Modal ala Dokumen */
+.modal-meta {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-title {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.modal-subtitle {
+  font-family: var(--font-sans);
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Grid untuk Form Spesifikasi */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 Kolom */
+  gap: 25px;
+}
+
+/* Tombol Batal/Kembali */
+.btn-text-cancel {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: #888;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.btn-text-cancel:hover {
+  color: #000;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

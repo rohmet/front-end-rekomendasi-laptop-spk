@@ -1,0 +1,17 @@
+/* --- MASTER STYLESHEET --- */
+
+/* 1. Pondasi Dasar & Font (Gaya Baru) */
+@import "base.css";
+
+/* 2. Layout Halaman Utama (Gaya Baru) */
+@import "layout.css";
+
+/* 3. Komponen UI seperti Tombol & Kartu (Gaya Baru) */
+@import "components.css";
+
+/* 4. Navbar (Gaya Lama yang Dipertahankan) */
+@import "navbar.css";
+
+/* Catatan: Karena Navbar kamu style-nya "Rounded/Floating", 
+   mungkin akan sedikit kontras dengan gaya "Kotak/Brutalist" 
+   di konten utama, tapi ini unik! */
